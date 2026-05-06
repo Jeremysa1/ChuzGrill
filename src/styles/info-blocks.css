@@ -6,7 +6,7 @@
 }
 
 .info-block {
-    background: white;
+    background: rgb(0, 0, 0);
     padding: var(--space-6);
     border-radius: var(--radius-md);
     border-left: 6px solid var(--naranja);

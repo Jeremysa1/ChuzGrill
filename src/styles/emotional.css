@@ -51,7 +51,7 @@
 
 .emotional-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 1120px;
     max-height: 800px;
     margin: 0;
     padding-left: var(--space-8);
@@ -88,29 +88,41 @@
 
 .emotional-content p {
     color: white;
-    font-size: var(--text-lg);
+    font-size: var(--text-3xl);
     line-height: 1.8;
     font-weight: 300;
-    margin: var(--space-2) 0 var(--space-6) 0;
+    width: min(56vw, 980px);
+    max-width: 100%;
+    margin: var(--space-1) 0 var(--space-2) 0;
 }
 
 .emotional-content .reveal-line {
     color: white;
-    font-size: var(--text-xl);
-    margin-bottom: var(--space-);
+    font-size: var(--text-3xl);
+    font-family: var(--font-titles);
+
+    max-width: 100%;
+    line-height: 1.1;
+    margin-bottom: 0;
     display: block;
 
+}
+
+.emotional-content .reveal-line:nth-child(3) {
+    font-style: italic;
+    color: var(--crema);
 }
 
 .emotional-content .end-line {
     color: white;
     font-size: var(--text-lg);
+    font-family: var(--font-body);
     line-height: 1.8;
     font-weight: 300;
 }
 
 .emotional-content .nav-cta {
-    margin-top: var(--space-8);
+    margin-top: var(--space-4);
     display: inline-block;
 }
 

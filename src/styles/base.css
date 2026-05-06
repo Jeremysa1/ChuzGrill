@@ -3,7 +3,7 @@
 :root {
     --rojo: #c0392b;
     --rojo-dark: #d81706;
-    --naranja: #f13322;
+    --naranja: #ff0000;
     --marron: #6d4c41;
     --crema: #fff8f0;
     --carbon: #1a1a1a;
@@ -85,7 +85,7 @@ a {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 var(--space-8);
 }
