@@ -3,10 +3,11 @@ import { Flame, Heart, Users } from 'lucide-react';
 export default function History() {
     return (
         <section id="nuestra-historia" className="history-section">
+
             <div className="history-content-column reveal reveal-left">
                 <div className="history-content-wrapper">
                     <div className="history-timeline"></div>
-                    <h2>Dos personas, una pasión</h2>
+                    <h2>DOS PERSONAS, UNA MISMA PASIÓN</h2>
                     <p>
                         Todo comenzó con un sueño compartido y las ganas de construir algo propio desde cero. Somos una
                         pareja de emprendedores de la Comuna 10 de Medellín que un día decidió convertir su pasión por la
