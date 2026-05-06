@@ -11,8 +11,9 @@ export default function Parrilla() {
     return (
         <section id="seccion-parrilla" className="section-premium dark" style={{ position: 'relative' }}>
             <div className="ember-container"></div>
-            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                <SectionHeading title="Directo al Carbón" subtitle="Nuestros favoritos, preparados al momento" />
+            <div className="container" style={{ position: 'relative', zIndex: 2, minWidth: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h1 className='title-parrilla'>Sabor al Carbón</h1>
+                <p className='sub-parrilla'>Descubre nuestros platos preparados directamente en la parrilla, con el sabor auténtico que solo puede ofrecer el fuego.</p>
                 <div className="carousel-wrapper">
                     <div className="carousel-container" id="carousel-parrilla">
                         <div className="carousel-track">
