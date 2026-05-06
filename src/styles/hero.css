@@ -177,3 +177,37 @@
     letter-spacing: 2px;
     z-index: 10;
 }
+
+.entry-message {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--crema);
+    margin-bottom: var(--space-2);
+    text-transform: none;
+    text-shadow: none;
+}
+
+.reveal.reveal-up {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--crema);
+    margin-bottom: var(--space-4);
+    margin-top: 0;
+}
+
+.emotional-content p {
+    margin: var(--space-2) 0 var(--space-6) 0;
+    color: white;
+}
+
+.emotional-content .reveal-line {
+    color: white;
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.emotional-content .nav-cta {
+    margin-top: var(--space-8);
+    display: inline-block;
+}

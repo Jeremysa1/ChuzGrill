@@ -2,8 +2,8 @@
 
 :root {
     --rojo: #c0392b;
-    --rojo-dark: #a93226;
-    --naranja: #e67e22;
+    --rojo-dark: #d81706;
+    --naranja: #f13322;
     --marron: #6d4c41;
     --crema: #fff8f0;
     --carbon: #1a1a1a;
@@ -20,6 +20,7 @@
     --text-hero: clamp(2.8rem, 9vw, 5.8rem);
     --font-titles: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
+    --space-min: -1px;
     --space-1: 8px;
     --space-2: 16px;
     --space-3: 24px;

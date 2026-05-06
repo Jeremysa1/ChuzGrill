@@ -6,14 +6,17 @@ export default function Hero() {
             {/* AQUI DEBEMOS CAMBIAR ESTE HERO, HACERLO MAS LLAMATIVO*/}
             <section className="emotional-section" id="emotional-section">
                 <div className="container emotional-content">
+                    <h3 className='entry-message'>COMIDA ARTESANAL DE CALIDAD</h3>
                     <h2 className="reveal reveal-up">¿Hambriento de algo real?</h2>
                     <p>
-                        <span className="reveal-line">En Chuzzgrill no solo cocinamos,</span>
-                        <span className="reveal-line">creamos momentos alrededor del fuego.</span>
-                        <span className="reveal-line">Comida artesanal, hecha con paciencia</span>
-                        <span className="reveal-line">y el sazón único de nuestra historia.</span>
-
+                        <span className="reveal-line">En Chuzzgrill no </span>
+                        <span className="reveal-line">solo cocinamos,</span>
+                        <span className="reveal-line">creamos momentos </span>
+                        <span className="reveal-line">alrededor del fuego.</span>
                     </p>
+                    <span className="end-line">Comida artesanal, hecha con paciencia</span>
+                    <span className="end-line">y el sazón único de nuestra historia.</span>
+                    <a href="#nuestra-historia" className="nav-cta">¡Quiero saber más!</a>
                 </div>
                 <div className="ember-container">
                     {Array.from({ length: 15 }).map((_, index) => (

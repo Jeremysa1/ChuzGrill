@@ -27,7 +27,7 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
                     ))}
                 </div>
 
-                <a href="" className="nav-cta">
+                <a href="#contacto" className="nav-cta">
                     ¿Te Antojas?<div className="pulse-ring"></div>
                 </a>
 
