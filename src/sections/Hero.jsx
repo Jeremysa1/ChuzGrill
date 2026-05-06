@@ -1,38 +1,39 @@
-import { ChevronsDown } from 'lucide-react';
-import AnimatedTitle from '../components/AnimatedTitle.jsx';
 
-export default function Hero({ onNavigate }) {
+import React from 'react'
+
+export default function Hero() {
     return (
-        <section id="hero" className="hero-split">
-            <div className="hero-half parrilla" onClick={() => onNavigate('seccion-parrilla')}>
-                <div
-                    className="hero-bg"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1500')" }}
-                ></div>
-                <div className="hero-overlay"></div>
-                <div className="hero-content">
-                    <AnimatedTitle id="title-parrilla" text="La Parrilla" />
-                    <div className="hero-line"></div>
-                    <p className="hero-subtitle">El alma del carbón y el sabor artesanal que nos define.</p>
-                    <div className="hero-arrow"><ChevronsDown /></div>
+        <div>
+            {/* AQUI DEBEMOS CAMBIAR ESTE HERO, HACERLO MAS LLAMATIVO*/}
+            <section className="emotional-section">
+                <div className="container emotional-content">
+                    <h2 className="reveal reveal-up">¿Hambriento de algo real?</h2>
+                    <p>
+                        <span className="reveal-line">En Chuzzgrill no solo cocinamos,</span>
+                        <span className="reveal-line">creamos momentos alrededor del fuego.</span>
+                        <span className="reveal-line">Comida artesanal, hecha con paciencia</span>
+                        <span className="reveal-line">y el sazón único de nuestra historia.</span>
+                    </p>
                 </div>
-            </div>
-
-            <div className="hero-half local" onClick={() => onNavigate('seccion-local')}>
-                <div
-                    className="hero-bg"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1500')" }}
-                ></div>
-                <div className="hero-overlay"></div>
-                <div className="hero-content">
-                    <AnimatedTitle id="title-local" text="El Local" />
-                    <div className="hero-line"></div>
-                    <p className="hero-subtitle">Un refugio acogedor en el corazón de la Comuna 10.</p>
-                    <div className="hero-arrow"><ChevronsDown /></div>
+                <div className="ember-container">
+                    {Array.from({ length: 15 }).map((_, index) => (
+                        <div
+                            key={index}
+                            className="ember"
+                            style={{
+                                width: `${Math.random() * 4 + 2}px`,
+                                height: `${Math.random() * 4 + 2}px`,
+                                left: `${Math.random() * 100}%`,
+                                top: '100%',
+                                animationDuration: `${Math.random() * 3 + 4}s`,
+                                animationDelay: `${Math.random() * 5}s`,
+                                opacity: Math.random() * 0.4 + 0.1,
+                            }}
+                        ></div>
+                    ))}
                 </div>
-            </div>
-
-            <div className="scroll-indicator">Descubre más</div>
-        </section>
-    );
+            </section>
+        </div>
+    )
 }
+

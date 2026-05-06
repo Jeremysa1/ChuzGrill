@@ -4,7 +4,6 @@ import MobileNav from './components/MobileNav.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import WhatsAppFab from './components/WhatsAppFab.jsx';
 import Hero from './sections/Hero.jsx';
-import Emotional from './sections/Emotional.jsx';
 import History from './sections/History.jsx';
 import Parrilla from './sections/Parrilla.jsx';
 import Local from './sections/Local.jsx';
@@ -158,7 +157,6 @@ export default function App() {
             <MobileNav open={mobileOpen} onNavigate={handleNavigate} />
             <main>
                 <Hero onNavigate={scrollToId} />
-                <Emotional />
                 <History />
                 <Parrilla />
                 <Local />
