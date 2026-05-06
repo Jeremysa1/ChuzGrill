@@ -4,7 +4,7 @@ export default function Hero() {
     return (
         <div>
             {/* AQUI DEBEMOS CAMBIAR ESTE HERO, HACERLO MAS LLAMATIVO*/}
-            <section className="emotional-section">
+            <section className="emotional-section" id="emotional-section">
                 <div className="container emotional-content">
                     <h2 className="reveal reveal-up">¿Hambriento de algo real?</h2>
                     <p>
@@ -12,6 +12,7 @@ export default function Hero() {
                         <span className="reveal-line">creamos momentos alrededor del fuego.</span>
                         <span className="reveal-line">Comida artesanal, hecha con paciencia</span>
                         <span className="reveal-line">y el sazón único de nuestra historia.</span>
+
                     </p>
                 </div>
                 <div className="ember-container">

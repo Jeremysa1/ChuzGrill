@@ -2,7 +2,7 @@ import { Menu } from 'lucide-react';
 
 export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNavigate }) {
     const links = [
-        { id: 'hero', label: 'Inicio' },
+        { id: 'emotional-section', label: 'Inicio' },
         { id: 'nuestra-historia', label: 'Historia' },
         { id: 'seccion-parrilla', label: 'La Parrilla' },
         { id: 'seccion-local', label: 'El Local' },
@@ -27,8 +27,8 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
                     ))}
                 </div>
 
-                <a href="#" className="nav-cta">
-                    Hacer Pedido<div className="pulse-ring"></div>
+                <a href="" className="nav-cta">
+                    ¿Te Antojas?<div className="pulse-ring"></div>
                 </a>
 
                 <button

@@ -1,7 +1,11 @@
 .emotional-section {
     background-color: #0d0d0d;
     padding: var(--space-20) 0;
+    min-height: 100vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     text-align: center;
 }
@@ -44,6 +48,7 @@
 
 .emotional-content {
     max-width: 800px;
+    max-height: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 2;

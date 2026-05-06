@@ -3,7 +3,7 @@ import { BookOpen, Flame, Home, MapPin } from 'lucide-react';
 export default function BottomNav({ activeSection, onNavigate }) {
     return (
         <nav className="bottom-nav-mobile">
-            <a href="#hero" className={`bottom-nav-item ${activeSection === 'hero' ? 'active' : ''}`} onClick={onNavigate}>
+            <a href="#emotional-section" className={`bottom-nav-item ${activeSection === 'emotional-section' ? 'active' : ''}`} onClick={onNavigate}>
                 <Home />
                 <span>Inicio</span>
             </a>
