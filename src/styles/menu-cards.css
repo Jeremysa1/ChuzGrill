@@ -1,0 +1,99 @@
+.menu-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--carbon);
+}
+
+.menu-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-warm-lg);
+    border-color: var(--naranja);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 450px;
+    background: var(--marron);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-category {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    background: var(--naranja);
+    color: white;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    z-index: 2;
+}
+
+.card-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.95) 10%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: var(--space-4);
+    z-index: 1;
+}
+
+.menu-card:hover .card-hover-overlay {
+    opacity: 1;
+}
+
+.card-order-btn {
+    background: var(--rojo);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    transform: translateY(20px);
+    transition: transform 0.4s var(--ease-bounce);
+    text-decoration: none;
+}
+
+.menu-card:hover .card-order-btn {
+    transform: translateY(0);
+}
+
+.card-content {
+    padding: var(--space-4);
+}
+
+.card-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-1);
+}
+
+.card-desc {
+    font-size: var(--text-sm);
+    color: var(--marron);
+    opacity: 0.8;
+    margin-bottom: var(--space-3);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-price {
+    font-family: var(--font-titles);
+    font-size: var(--text-xl);
+    color: var(--rojo);
+    font-weight: 900;
+}

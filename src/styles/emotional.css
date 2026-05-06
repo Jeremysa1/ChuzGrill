@@ -1,0 +1,76 @@
+.emotional-section {
+    background-color: #0d0d0d;
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.ember-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ember {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--naranja);
+    filter: blur(1px);
+    pointer-events: none;
+    animation: float-ember linear infinite;
+}
+
+@keyframes float-ember {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.emotional-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.emotional-content h2 {
+    font-family: var(--font-titles);
+    font-size: var(--text-2xl);
+    color: var(--crema);
+    margin-bottom: var(--space-6);
+}
+
+.emotional-content p {
+    color: var(--crema);
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.reveal-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+}
+
+.reveal-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
