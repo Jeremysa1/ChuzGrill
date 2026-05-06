@@ -1,0 +1,128 @@
+.section-premium.dark {
+    background: linear-gradient(180deg, rgba(3, 3, 3, 0.98) 0%, rgba(10, 10, 10, 0.95) 100%);
+    color: var(--crema);
+    padding: var(--space-16) 0;
+}
+
+.title-parrilla {
+
+    font-family: var(--font-titles);
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    color: var(--crema);
+    margin: 0 0 var(--space-2) 0;
+    text-align: center;
+}
+
+.sub-parrilla {
+    max-width: 720px;
+    color: rgba(255, 248, 240, 0.9);
+    font-size: clamp(16px, 2.4vw, var(--text-base));
+    margin: 0 auto var(--space-6) auto;
+    text-align: center;
+}
+
+.carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    overflow: visible;
+    border-radius: var(--radius-md);
+    position: relative;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.carousel-track {
+    display: flex;
+    gap: var(--space-6);
+    transition: transform 0.6s var(--ease-smooth);
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--space-4);
+}
+
+.carousel-slide {
+    min-width: 35%;
+    width: 35%;
+    height: clamp(240px, 36vw, 520px);
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-md);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.6s var(--ease-smooth);
+}
+
+.carousel-slide.active {
+    min-width: 45%;
+    width: 45%;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 15px 50px rgba(230, 126, 34, 0.3);
+}
+
+.slide-number {
+    position: absolute;
+    right: var(--space-4);
+    bottom: var(--space-4);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-family: var(--font-body);
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+    width: 100%;
+}
+
+.carousel-progress-container {
+    order: 2;
+}
+
+.carousel-arrow {
+    order: 1;
+}
+
+.carousel-arrow+.carousel-progress-container+.carousel-arrow {
+    order: 3;
+}
+
+@media (min-width: 1024px) {
+    .carousel-slide {
+        min-width: 35%;
+        width: 35%;
+    }
+
+    .carousel-track {
+        gap: var(--space-6);
+    }
+}
+
+@media (max-width: 640px) {
+    .carousel-wrapper {
+        flex-direction: column;
+    }
+
+    .carousel-slide {
+        min-width: 90%;
+        width: 90%;
+    }
+}

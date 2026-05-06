@@ -1,0 +1,213 @@
+.hero-split {
+    height: 100vh;
+    min-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--negro-abs);
+}
+
+@media (min-width: 1024px) {
+    .hero-split {
+        flex-direction: row;
+    }
+}
+
+.hero-half {
+    position: relative;
+    flex: 1;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: flex 0.6s var(--ease-bounce);
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    .hero-half {
+        height: 100vh;
+    }
+
+    .hero-half:hover {
+        flex: 1.2;
+    }
+
+    .hero-half.parrilla {
+        clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+        z-index: 2;
+    }
+
+    .hero-half.local {
+        clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+        margin-left: -4%;
+        z-index: 1;
+    }
+}
+
+.hero-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.1s linear;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 13, 13, 0.6);
+    transition: background 0.4s ease;
+    z-index: 1;
+}
+
+.hero-half:hover .hero-overlay {
+    background: rgba(13, 13, 13, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: var(--space-4);
+    transition: transform 0.5s var(--ease-bounce);
+}
+
+.hero-half:hover .hero-content {
+    transform: translateY(-15px);
+}
+
+.hero-title {
+    font-family: var(--font-titles);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: var(--text-hero);
+    }
+}
+
+.hero-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-line {
+    width: 0;
+    height: 4px;
+    background: var(--naranja);
+    margin: 0 auto var(--space-3);
+    transition: width 0.8s var(--ease-smooth);
+}
+
+.hero-half:hover .hero-line {
+    width: 80px;
+}
+
+.hero-subtitle {
+    font-size: var(--text-base);
+    font-weight: 400;
+    opacity: 0.9;
+    max-width: 300px;
+    margin: 0 auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-arrow {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    color: var(--crema);
+}
+
+.hero-arrow svg {
+    width: 32px;
+    height: 32px;
+}
+
+.hero-half:hover .hero-arrow {
+    opacity: 1;
+    animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    40% {
+        transform: translate(-50%, -10px);
+    }
+
+    60% {
+        transform: translate(-50%, -5px);
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 10;
+}
+
+.entry-message {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--crema);
+    margin-bottom: var(--space-2);
+    text-transform: none;
+    text-shadow: none;
+}
+
+.reveal.reveal-up {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--crema);
+    margin-bottom: var(--space-4);
+    margin-top: 0;
+}
+
+.emotional-content p {
+    margin: var(--space-2) 0 var(--space-6) 0;
+    color: white;
+}
+
+.emotional-content .reveal-line {
+    color: white;
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.emotional-content .nav-cta {
+    margin-top: var(--space-8);
+    display: inline-block;
+}
