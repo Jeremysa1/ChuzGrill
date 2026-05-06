@@ -28,8 +28,8 @@ const items = [
 
 export default function Local() {
     return (
-        <section id="seccion-local" className="section-premium light">
-            <div className="container">
+        <section id="seccion-local" className="section-premium dark-local">
+            <div className="container" style={{ width: '1400px', margin: '0 auto' }}>
                 <SectionHeading title="Nuestro Local" subtitle="Un espacio pensado para tu comodidad" />
 
                 <div className="carousel-wrapper">
@@ -37,16 +37,16 @@ export default function Local() {
                         <div className="carousel-track">
                             {items.map((item, index) => (
                                 <div key={item.title} className={`carousel-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
-                                    <div className="menu-card" style={{ height: '100%', border: 'none' }}>
-                                        <div className="card-img-wrapper" style={{ height: '100%' }}>
-                                            <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <div className="menu-card">
+                                        <div className="card-img-wrapper">
+                                            <img src={item.image} alt={item.title} />
                                             <div className="card-category">{item.category}</div>
-                                            <div className="card-hover-overlay" style={{ opacity: 1, background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)' }}>
-                                                <div className="card-content" style={{ color: 'white', width: '100%' }}>
+                                            <div className="card-hover-overlay">
+                                                <div className="card-content">
                                                     <h3 className="card-title">{item.title}</h3>
-                                                    <p className="card-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>{item.desc}</p>
+                                                    <p className="card-desc">{item.desc}</p>
                                                     <div className="card-footer">
-                                                        <span className="card-price" style={{ color: 'var(--naranja)' }}>{item.price}</span>
+                                                        <span className="card-price">{item.price}</span>
                                                     </div>
                                                 </div>
                                             </div>
