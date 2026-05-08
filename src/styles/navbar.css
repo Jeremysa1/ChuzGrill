@@ -27,19 +27,12 @@
 }
 
 .nav-logo {
-    width: 180px;
-    height: 45px;
-    background: rgba(241, 67, 67, 0.05);
+    height: 75px;
+    width: 240px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: var(--font-body);
-    font-weight: 900;
-    color: var(--crema);
-    letter-spacing: 2px;
+    justify-content: flex-start;
     position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-sm);
 }
 
 .nav-links {

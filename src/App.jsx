@@ -16,7 +16,7 @@ export default function App() {
     const [activeSection, setActiveSection] = useState('hero');
 
     useEffect(() => {
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll('section[id], footer[id]');
 
         const updateActiveLink = () => {
             let current = 'hero';
@@ -55,81 +55,6 @@ export default function App() {
         return () => observer.disconnect();
     }, []);
 
-    useEffect(() => {
-        const initCarousel = (id, progressId) => {
-            const container = document.getElementById(id);
-            if (!container) return () => { };
-
-            const track = container.querySelector('.carousel-track');
-            const slides = container.querySelectorAll('.carousel-slide');
-            const progressBar = document.getElementById(progressId);
-            const suffix = id.split('-')[1];
-            const nextBtn = document.getElementById(`next-${suffix}`);
-            const prevBtn = document.getElementById(`prev-${suffix}`);
-            let currentIndex = 0;
-
-            const update = () => {
-                if (!track || slides.length === 0) return;
-
-                const slideWidth = slides[0].offsetWidth + 48;
-                track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-
-                slides.forEach((slide, index) => {
-                    slide.classList.remove('active');
-                    if (index === currentIndex) slide.classList.add('active');
-                });
-
-                if (progressBar) {
-                    progressBar.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
-                }
-            };
-
-            const next = () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                update();
-            };
-
-            const prev = () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                update();
-            };
-
-            nextBtn?.addEventListener('click', next);
-            prevBtn?.addEventListener('click', prev);
-
-            let startX = 0;
-
-            const onTouchStart = (event) => {
-                startX = event.touches[0].clientX;
-            };
-
-            const onTouchEnd = (event) => {
-                const endX = event.changedTouches[0].clientX;
-                if (startX - endX > 50) next();
-                if (startX - endX < -50) prev();
-            };
-
-            container.addEventListener('touchstart', onTouchStart);
-            container.addEventListener('touchend', onTouchEnd);
-            update();
-
-            return () => {
-                nextBtn?.removeEventListener('click', next);
-                prevBtn?.removeEventListener('click', prev);
-                container.removeEventListener('touchstart', onTouchStart);
-                container.removeEventListener('touchend', onTouchEnd);
-            };
-        };
-
-        const cleanupParrilla = initCarousel('carousel-parrilla', 'progress-parrilla');
-        const cleanupMenu = initCarousel('carousel-menu', 'progress-menu');
-
-        return () => {
-            cleanupParrilla();
-            cleanupMenu();
-        };
-    }, []);
-
     const scrollToId = (id) => {
         const target = document.getElementById(id);
         if (target) {
@@ -163,7 +88,7 @@ export default function App() {
                 <Testimonials />
                 <CTA />
             </main>
-            <Footer />
+            <Footer onNavigate={handleNavigate} />
             <BottomNav activeSection={activeSection} onNavigate={handleNavigate} />
             <WhatsAppFab />
         </div>

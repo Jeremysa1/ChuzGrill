@@ -4,7 +4,7 @@ export default function Hero() {
     return (
         <div>
             {/* AQUI DEBEMOS CAMBIAR ESTE HERO, HACERLO MAS LLAMATIVO*/}
-            <section className="emotional-section" id="emotional-section">
+            <section className="emotional-section" id="hero">
                 <div className="container emotional-content">
                     <h3 className='entry-message'>COMIDA ARTESANAL DE CALIDAD</h3>
                     <h2 className="reveal reveal-up">¿Hambriento de algo real?</h2>
@@ -19,21 +19,29 @@ export default function Hero() {
                     <a href="#nuestra-historia" className="nav-cta">¡Quiero saber más!</a>
                 </div>
                 <div className="ember-container">
-                    {Array.from({ length: 15 }).map((_, index) => (
-                        <div
-                            key={index}
-                            className="ember"
-                            style={{
-                                width: `${Math.random() * 4 + 2}px`,
-                                height: `${Math.random() * 4 + 2}px`,
-                                left: `${Math.random() * 100}%`,
-                                top: '100%',
-                                animationDuration: `${Math.random() * 3 + 4}s`,
-                                animationDelay: `${Math.random() * 5}s`,
-                                opacity: Math.random() * 0.4 + 0.1,
-                            }}
-                        ></div>
-                    ))}
+                    {Array.from({ length: 30 }).map((_, index) => {
+                        const size = Math.random() * 5 + 2;
+                        const color = '#ff3d00';
+                        const glow = '#ff0000';
+                        
+                        return (
+                            <div
+                                key={index}
+                                className="ember"
+                                style={{
+                                    width: `${size}px`,
+                                    height: `${size}px`,
+                                    left: `${Math.random() * 100}%`,
+                                    bottom: '-10px',
+                                    animationDuration: `${Math.random() * 4 + 3}s`,
+                                    animationDelay: `${Math.random() * 4}s`,
+                                    background: color,
+                                    boxShadow: `0 0 ${size * 2}px ${color}, 0 0 ${size * 4}px ${glow}`,
+                                    opacity: 0
+                                }}
+                            ></div>
+                        );
+                    })}
                 </div>
             </section>
         </div>

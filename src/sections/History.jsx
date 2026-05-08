@@ -28,7 +28,7 @@ export default function History() {
             </div>
 
             <div className="history-image-column reveal reveal-right">
-                <img src="/historia.png" alt="Fundadores de Chuzzgrill" />
+                <img src="/ParejaE1.png" alt="Fundadores de Chuzzgrill" />
             </div>
         </section>
     );

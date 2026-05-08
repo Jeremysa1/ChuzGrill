@@ -1,0 +1,30 @@
+.section-premium {
+    padding: var(--space-4) 0 var(--space-16) 0;
+    overflow: hidden;
+    scroll-margin-top: 80px;
+}
+
+.section-premium.dark {
+    background: var(--negro-abs);
+    color: var(--crema);
+}
+
+.section-premium.light {
+    background: var(--humo);
+    color: var(--carbon);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.section-header h2 {
+    font-family: var(--font-titles);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-2);
+}
+
+.section-header p {
+    margin: 0;
+}

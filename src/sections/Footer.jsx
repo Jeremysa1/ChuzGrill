@@ -1,22 +1,24 @@
 import { MapPin } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
     return (
-        <footer className="footer">
+        <footer className="footer" id="contacto">
             <div className="footer-line"></div>
             <div className="container">
                 <div className="footer-grid">
                     <div>
-                        <div className="nav-logo" style={{ width: '140px' }}>CHUZZGRILL</div>
+                        <div className="nav-logo" style={{ height: '80px', width: 'auto' }}>
+                            <img src="/logo.svg" alt="Chuzzgrill Logo" style={{ height: '100%', width: 'auto' }} />
+                        </div>
                         <p className="footer-tagline">Artesanal desde el primer día. <br /> Medellín, Colombia.</p>
                     </div>
                     <div className="footer-links">
                         <h4>Navegación</h4>
                         <ul>
-                            <li><a href="#hero">Inicio</a></li>
-                            <li><a href="#nuestra-historia">Historia</a></li>
-                            <li><a href="#seccion-parrilla">La Parrilla</a></li>
-                            <li><a href="#seccion-local">El Local</a></li>
+                            <li><a href="#hero" onClick={onNavigate}>Inicio</a></li>
+                            <li><a href="#nuestra-historia" onClick={onNavigate}>Historia</a></li>
+                            <li><a href="#seccion-parrilla" onClick={onNavigate}>La Parrilla</a></li>
+                            <li><a href="#seccion-local" onClick={onNavigate}>El Local</a></li>
                         </ul>
                     </div>
                     <div className="footer-links">

@@ -20,7 +20,7 @@ export default function CTA() {
         <section id="contacto" className="cta-premium">
             <div className="cta-pattern"></div>
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                <h2 className="reveal reveal-up">¿Listo para el antojo?</h2>
+                <h2 className="reveal reveal-up">Ríndete ante el antojo</h2>
                 <p className="reveal reveal-up">Estamos encendiendo la parrilla por ti. Pide ahora o ven a visitarnos.</p>
                 <div className="cta-buttons reveal reveal-up">
                     <a href="#" className="btn-premium primary" onClick={createRipple}>
