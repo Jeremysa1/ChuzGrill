@@ -1,39 +1,74 @@
-import { useState } from 'react';
-import SectionHeading from '../components/SectionHeading.jsx';
+import { Flame, ChevronRight } from 'lucide-react';
 
-const slides = [
-    { src: '/Parrilla1.png', title: 'Cortes Selectos' },
-    { src: '/Parrilla2.png', title: 'Ahumado Lento' },
-    { src: '/Parrilla3.png', title: 'Maestría al Fuego' },
-    { src: '/Parrilla4.png', title: 'Sabor del Encuentro' },
+const items = [
+    {
+        label: '',
+        src: '/Parrilla1.png',
+        title: 'Cortes Selectos',
+        desc: 'Carnes de primera, seleccionadas con criterio, preparadas artesanalmente para el fuego y selladas en su punto.',
+        reverse: false,
+    },
+    {
+        label: '',
+        src: '/Parrillado.jpg',
+        title: 'Ahumado Lento',
+        desc: 'Horas de humo, carbón y paciencia para lograr una textura que no se olvida, sin atajos.',
+        reverse: true,
+    },
+    {
+        label: '',
+        src: '/Parrilla4.png',
+        title: 'Sabor del Encuentro',
+        desc: 'La parrilla no miente — el fuego y el tiempo hacen el resto. El sabor es el resultado de un ritual que se comparte.',
+        reverse: false,
+    },
 ];
 
 export default function Parrilla() {
-    const [activeIndex, setActiveIndex] = useState(0);
-
     return (
-        <section id="seccion-parrilla" className="section-premium dark" style={{ position: 'relative' }}>
-            <div className="ember-container"></div>
-            <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <h1 className='title-parrilla'>Sabor al Carbón</h1>
-                <p className='sub-parrilla'>Todo comienza en el fuego. Desliza y conoce la historia de nuestra parrilla, donde transformamos ingredientes frescos en puro sabor.</p>
+        <section id="seccion-parrilla" className="pl-section">
+            {/* Header centrado */}
+            <div className="pl-header">
+                <span className="pl-eyebrow">
+                    <Flame size={14} />
+                    La Parrilla
+                </span>
+                <h2 className="pl-title">
+                    Sabor al <em>Carbón</em>
+                </h2>
+                <p className="pl-subtitle">
+                    Todo comienza en el fuego. Ingredientes frescos transformados en puro sabor artesanal.
+                </p>
+            </div>
 
-                <div className="expanding-container">
-                    {slides.map((slide, index) => (
-                        <div
-                            key={index}
-                            className={`panel ${index === activeIndex ? 'active' : ''}`}
-                            onClick={() => setActiveIndex(index)}
-                        >
-                            <img
-                                src={slide.src}
-                                alt={slide.title}
-                                className="panel-img"
-                            />
-                            <h3>{slide.title}</h3>
+            {/* Filas alternas imagen + texto */}
+            <div className="pl-rows">
+                {items.map((item) => (
+                    <div
+                        key={item.label}
+                        className={`pl-row${item.reverse ? ' pl-row--reverse' : ''}`}
+                    >
+                        <div className="pl-row-image">
+                            <div className="pl-img-frame">
+                                <img src={item.src} alt={item.title} className="pl-img" />
+                                <div className="pl-img-overlay" />
+                            </div>
                         </div>
-                    ))}
-                </div>
+                        <div className="pl-row-content">
+                            <span className="pl-row-label">{item.label}</span>
+                            <h3 className="pl-row-title">{item.title}</h3>
+                            <div className="pl-row-divider" />
+                            <p className="pl-row-desc">{item.desc}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* CTA centrado */}
+            <div className="pl-footer-cta">
+                <a href="#contacto" className="pl-link">
+                    Ver el menú completo <ChevronRight size={16} />
+                </a>
             </div>
         </section>
     );

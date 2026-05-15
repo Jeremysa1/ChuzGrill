@@ -1,11 +1,11 @@
 .menu-card {
-    background: white;
+    background: #121212;
     border-radius: var(--radius-lg);
     overflow: hidden;
     position: relative;
     transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--carbon);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--crema);
 }
 
 .menu-card:hover {
@@ -80,8 +80,8 @@
 
 .card-desc {
     font-size: var(--text-sm);
-    color: var(--marron);
-    opacity: 0.8;
+    color: var(--crema);
+    opacity: 0.6;
     margin-bottom: var(--space-3);
 }
 

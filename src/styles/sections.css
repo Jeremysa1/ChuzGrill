@@ -1,30 +1,61 @@
+/* ── Section base rhythm ── */
 .section-premium {
-    padding: var(--space-4) 0 var(--space-16) 0;
+    padding: var(--space-16) 0 var(--space-20) 0;
     overflow: hidden;
     scroll-margin-top: 80px;
+    position: relative;
 }
 
-.section-premium.dark {
-    background: var(--negro-abs);
+@media (min-width: 768px) {
+    .section-premium {
+        padding: var(--space-20) 0 280px 0;
+    }
+}
+
+/* ── Dark sections — subtle continuity ── */
+.section-premium.dark,
+.section-premium.light {
+    background: var(--bg-page);
     color: var(--crema);
 }
 
-.section-premium.light {
-    background: var(--humo);
-    color: var(--carbon);
+/* Gradient edge blending between dark sections */
+.section-premium.dark + .section-premium.dark::before,
+.section-premium.light + .section-premium.light::before,
+.section-premium.dark + .section-premium.light::before,
+.section-premium.light + .section-premium.dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.6) 0%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 0;
 }
 
+/* ── Section header ── */
 .section-header {
     text-align: center;
     margin-bottom: var(--space-6);
+    position: relative;
+    z-index: 1;
 }
 
 .section-header h2 {
     font-family: var(--font-titles);
     font-size: var(--text-3xl);
     margin-bottom: var(--space-2);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
 .section-header p {
     margin: 0;
+    color: rgba(255, 248, 240, 0.65);
 }

@@ -5,8 +5,7 @@ export default function Hero() {
         <div>
             {/* AQUI DEBEMOS CAMBIAR ESTE HERO, HACERLO MAS LLAMATIVO*/}
             <section className="emotional-section" id="hero">
-                <div className="container emotional-content">
-                    <h3 className='entry-message'>COMIDA ARTESANAL DE CALIDAD</h3>
+                <div className="nav-container emotional-content">
                     <h2 className="reveal reveal-up">¿Hambriento de algo real?</h2>
                     <p>
                         <span className="reveal-line">En Chuzzgrill no </span>

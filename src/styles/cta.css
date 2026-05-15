@@ -1,6 +1,6 @@
 .cta-premium {
     padding: var(--space-16) 0;
-    background: linear-gradient(135deg, #a93226 0%, #c0392b 50%, #e74c3c 100%);
+    background: linear-gradient(135deg, var(--rojo-dark) 0%, var(--rojo) 50%, var(--naranja) 100%);
     position: relative;
     text-align: center;
     color: white;

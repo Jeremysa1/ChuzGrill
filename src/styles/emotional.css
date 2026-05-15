@@ -1,13 +1,13 @@
 .emotional-section {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 35%, rgba(0, 0, 0, 0.88) 50%, rgba(0, 0, 0, 0.95) 55%, rgba(0, 0, 0, 0) 78%),
+    background-image: linear-gradient(90deg, rgba(10, 10, 10, 1) 35%, rgba(10, 10, 10, 0.88) 50%, rgba(10, 10, 10, 1) 55%, rgba(10, 10, 10, 0) 78%),
         url('../assets/1.png');
 
     background-position: right;
-    padding: var(--space-20) 0;
     min-height: 100vh;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Changed from center */
+    padding-top: clamp(140px, 18vh, 200px); /* Move text higher */
     justify-content: flex-start;
     overflow: hidden;
     text-align: left;
@@ -55,10 +55,8 @@
 
 .emotional-content {
     width: 100%;
-    max-width: 1120px;
     max-height: 800px;
     margin: 0;
-    padding-left: var(--space-8);
     position: relative;
     z-index: 2;
     display: flex;
@@ -140,4 +138,37 @@
 .reveal-line.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ── Mobile Optimization for Hero Image ── */
+@media (max-width: 768px) {
+    .emotional-section {
+        /* Change gradient to be clearer in the top/middle area */
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(10, 10, 10, 0.2) 0%, 
+            rgba(10, 10, 10, 0.5) 40%, 
+            rgba(10, 10, 10, 0.9) 100%
+        ),
+        url('../assets/1.png');
+        
+        background-position: 65% center; /* Shift focal point of the image */
+        padding-top: 12vh; /* Adjust spacing */
+        min-height: 90vh; /* Slightly shorter to show more context */
+    }
+
+    .emotional-content h2 {
+        font-size: 2.3rem; /* Increased from 1.8rem */
+        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+
+    .emotional-content p {
+        font-size: 1.6rem; /* Increased from 1.4rem */
+        width: 100%; 
+        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    .emotional-content .reveal-line {
+        font-size: 1.6rem; /* Increased from 1.4rem */
+    }
 }

@@ -6,16 +6,29 @@
     z-index: 1002;
     display: flex;
     align-items: center;
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     border-bottom: 1px solid rgba(230, 126, 34, 0.15);
     transition: var(--transition);
 }
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
     .navbar {
-        background: rgba(26, 26, 26, 0.85);
+        background: rgba(10, 10, 10, 0.85);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         backdrop-filter: blur(20px) saturate(180%);
+    }
+}
+
+.nav-container {
+    max-width: 1540px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 var(--space-8);
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 var(--space-2);
     }
 }
 
@@ -94,6 +107,23 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-warm-md);
     background: linear-gradient(135deg, var(--rojo-dark) 0%, var(--rojo) 100%);
+}
+
+@media (max-width: 1024px) {
+    .nav-cta {
+        padding: 8px 16px;
+        font-size: 11px;
+        letter-spacing: 0;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-cta {
+        padding: 6px 12px;
+        font-size: 10px;
+        margin-right: 8px;
+    }
 }
 
 .pulse-ring {
@@ -178,7 +208,7 @@
     right: -100%;
     width: 80%;
     height: 100vh;
-    background: var(--carbon);
+    background: var(--bg-page);
     z-index: 1000;
     display: flex;
     flex-direction: column;

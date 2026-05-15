@@ -11,7 +11,7 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
 
     return (
         <nav className="navbar">
-            <div className="container navbar-content">
+            <div className="nav-container navbar-content">
                 <div className="nav-logo">
                     <img src="/logo.svg" alt="Chuzzgrill Logo" style={{ height: '100%', width: 'auto' }} />
                 </div>
@@ -29,7 +29,7 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
                     ))}
                 </div>
 
-                <a href="#contacto" className="nav-cta">
+                <a href="#contacto" className="nav-cta" onClick={onNavigate}>
                     ¿Te Antojas?<div className="pulse-ring"></div>
                 </a>
 
