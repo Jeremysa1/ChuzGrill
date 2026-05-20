@@ -1,4 +1,4 @@
-import { Menu } from 'lucide-react';
+
 
 export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNavigate }) {
     const links = [
@@ -13,7 +13,7 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
         <nav className="navbar">
             <div className="nav-container navbar-content">
                 <div className="nav-logo">
-                    <img src="/logo.svg" alt="Chuzzgrill Logo" style={{ height: '100%', width: 'auto' }} />
+                    <img src="/logo.svg" alt="Chuzgrill Logo" style={{ height: '100%', width: 'auto' }} />
                 </div>
 
                 <div className="nav-links">

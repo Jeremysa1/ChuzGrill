@@ -4,9 +4,9 @@ const stories = [
     {
         id: 'origin',
         label: '  Origen',
-        heading: 'Dos personas,\nuna misma pasión.',
+        heading: <>Dos personas,<br />una misma <span className="accent-red">pasión</span>.</>,
         body: 'Todo comenzó con un sueño compartido y las ganas de construir algo propio desde cero. Somos una pareja de emprendedores de la Comuna 10 de Medellín que un día decidió convertir su pasión por la cocina en algo real.',
-        image: '/Pareja1.png',
+        image: '/Pareja1.webp',
         imageAlt: 'Los fundadores de ChuzGrill',
         reverse: false,
         accentIcon: <Heart size={18} />,
@@ -14,9 +14,9 @@ const stories = [
     {
         id: 'craft',
         label: '  Artesanal',
-        heading: 'Sin atajos.\nSin procesos industriales.',
+        heading: <>Sin <span className="accent-red">atajos</span>.<br />Sin procesos industriales.</>,
         body: 'Cada carne la preparamos nosotros mismos, cada salsa lleva nuestra receta, y cada producto sale fresco al momento en que lo pides. Somos un proyecto construido con esfuerzo diario y el amor genuino por lo que hacemos.',
-        image: '/Preparacion2.png',
+        image: '/Preparacion1.webp',
         imageAlt: 'Proceso artesanal ChuzGrill',
         reverse: true,
         accentIcon: <Flame size={18} />,
@@ -24,9 +24,9 @@ const stories = [
     {
         id: 'fire',
         label: ' Familiar',
-        heading: 'El sabor que no se olvida.',
-        body: 'Todo el proceso —la carne, las salsas, el fuego— existe para un solo momento: el primero que lo pruebas.',
-        image: '/Procesos.png',
+        heading: <>De nuestra cocina a tu <span className="accent-red">mesa</span></>,
+        body: 'No buscamos hacer algo rápido; buscamos hacer algo que valga la pena compartir. Cada ingrediente, cada receta y cada preparación reflejan el trabajo y la dedicación que ponemos en lo que hacemos.',
+        image: '/Procesos.webp',
         imageAlt: 'Fuego y parrilla ChuzGrill',
         reverse: false,
         accentIcon: <Users size={18} />,
@@ -40,7 +40,7 @@ export default function History() {
             {/* Header editorial */}
             <div className="history-header reveal reveal-up">
                 <span className="history-eyebrow">Nuestra historia</span>
-                <h2 className="history-title">Construido con<br /><em>fuego y esfuerzo.</em></h2>
+                <h2 className="history-title">Construido con<br /><em><span className="accent-red">fuego</span> y esfuerzo.</em></h2>
                 <div className="history-title-line" />
             </div>
 
@@ -74,9 +74,7 @@ export default function History() {
                                     <span className="history-label">{story.label}</span>
                                 </div>
                                 <h3 className="history-story-title">
-                                    {story.heading.split('\n').map((line, i) => (
-                                        <span key={i}>{line}<br /></span>
-                                    ))}
+                                    {story.heading}
                                 </h3>
                                 <div className="history-divider" />
                                 <p className="history-body">{story.body}</p>

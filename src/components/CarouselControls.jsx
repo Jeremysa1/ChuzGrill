@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function CarouselControls({ previousId, nextId, progressId, dark = false }) {
+export default function CarouselControls({ previousId, nextId, progressId }) {
     return (
         <div className="carousel-nav">
             <button className="carousel-arrow" id={previousId} type="button" aria-label="Anterior">

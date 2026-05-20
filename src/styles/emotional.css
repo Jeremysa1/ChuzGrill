@@ -1,6 +1,6 @@
 .emotional-section {
     background-image: linear-gradient(90deg, rgba(10, 10, 10, 1) 35%, rgba(10, 10, 10, 0.88) 50%, rgba(10, 10, 10, 1) 55%, rgba(10, 10, 10, 0) 78%),
-        url('../assets/1.png');
+        url('../assets/1.webp');
 
     background-position: right;
     min-height: 100vh;
@@ -81,8 +81,9 @@
 
 .emotional-content h2 {
     font-family: var(--font-titles);
-    font-size: var(--text-2xl);
-    font-weight: 700;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
     color: var(--crema);
     margin-bottom: var(--space-4);
     margin-top: 0;
@@ -90,8 +91,8 @@
 
 .emotional-content p {
     color: white;
-    font-size: var(--text-3xl);
-    line-height: 1.8;
+    font-size: var(--text-xl);
+    line-height: 1.6;
     font-weight: 300;
     width: min(56vw, 980px);
     max-width: 100%;
@@ -100,11 +101,11 @@
 
 .emotional-content .reveal-line {
     color: white;
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
     font-family: var(--font-titles);
 
     max-width: 100%;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 0;
     display: block;
 
@@ -124,8 +125,31 @@
 }
 
 .emotional-content .nav-cta {
-    margin-top: var(--space-4);
+    margin-top: 0;
     display: inline-block;
+}
+
+.hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--crema);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: var(--transition);
+}
+
+.hero-cta-secondary:hover {
+    color: var(--rojo);
 }
 
 .reveal-line {
@@ -143,32 +167,73 @@
 /* ── Mobile Optimization for Hero Image ── */
 @media (max-width: 768px) {
     .emotional-section {
-        /* Change gradient to be clearer in the top/middle area */
-        background-image: linear-gradient(
+        /* No gradient overlay on the section — 100% image clarity at the top */
+        background-image: url('../assets/1.webp');
+        background-position: 65% top; /* Desplazado ligeramente a la izquierda para mostrar el brillo de la parrilla */
+        background-size: auto 65vh; /* Scales height to 65% of screen, letting the dark left side bleed off naturally */
+        background-repeat: no-repeat;
+        padding: 0; 
+        align-items: flex-end; /* Push content to the bottom */
+        min-height: 100vh; 
+    }
+
+    .emotional-content {
+        /* Premium "bottom sheet" style */
+        width: 100%;
+        max-height: none;
+        padding: 20vh var(--space-4) calc(var(--space-8) + 60px); 
+        background: linear-gradient(
             to bottom, 
-            rgba(10, 10, 10, 0.2) 0%, 
-            rgba(10, 10, 10, 0.5) 40%, 
-            rgba(10, 10, 10, 0.9) 100%
-        ),
-        url('../assets/1.png');
-        
-        background-position: 65% center; /* Shift focal point of the image */
-        padding-top: 12vh; /* Adjust spacing */
-        min-height: 90vh; /* Slightly shorter to show more context */
+            rgba(10, 10, 10, 0) 0%, 
+            rgba(10, 10, 10, 0.85) 20%, 
+            rgba(10, 10, 10, 1) 35%,
+            rgba(10, 10, 10, 1) 100%
+        );
+        margin: 0;
+        align-items: center; 
+        text-align: center;
     }
 
     .emotional-content h2 {
-        font-size: 2.3rem; /* Increased from 1.8rem */
-        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: var(--space-3);
+        text-shadow: none; 
     }
 
     .emotional-content p {
-        font-size: 1.6rem; /* Increased from 1.4rem */
         width: 100%; 
-        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        text-align: center;
+        margin-bottom: var(--space-4);
+        text-shadow: none;
     }
 
     .emotional-content .reveal-line {
-        font-size: 1.6rem; /* Increased from 1.4rem */
+        font-size: 1.25rem;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    .emotional-content .end-line {
+        text-align: center;
+        display: block;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.75);
+    }
+    
+    .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-4);
+        margin-top: var(--space-4);
+        width: 100%;
+    }
+    
+    .emotional-content .nav-cta {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 }

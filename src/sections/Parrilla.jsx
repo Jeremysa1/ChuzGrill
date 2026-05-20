@@ -3,23 +3,23 @@ import { Flame, ChevronRight } from 'lucide-react';
 const items = [
     {
         label: '',
-        src: '/Parrilla1.png',
-        title: 'Cortes Selectos',
-        desc: 'Carnes de primera, seleccionadas con criterio, preparadas artesanalmente para el fuego y selladas en su punto.',
+        src: '/Parrilla1.webp',
+        title: <>Cortes <span className="accent-red">Selectos</span></>,
+        desc: 'Carnes de primera, seleccionadas con criterio, preparadas para el fuego y selladas en su punto.',
         reverse: false,
     },
     {
         label: '',
-        src: '/Parrillado.jpg',
-        title: 'Ahumado Lento',
-        desc: 'Horas de humo, carbón y paciencia para lograr una textura que no se olvida, sin atajos.',
+        src: '/Parrillado.webp',
+        title: <>Tiempo y <span className="accent-red">Carbón</span></>,
+        desc: 'El fuego tiene su ritmo. Cocinamos con paciencia para lograr el punto exacto, sin atajos ni procesos acelerados.',
         reverse: true,
     },
     {
         label: '',
-        src: '/Parrilla4.png',
-        title: 'Sabor del Encuentro',
-        desc: 'La parrilla no miente — el fuego y el tiempo hacen el resto. El sabor es el resultado de un ritual que se comparte.',
+        src: '/Parrilla4.webp',
+        title: <>Cerca del <span className="accent-red">fuego</span></>,
+        desc: 'Nos gusta preparar cada pedido frente a quien lo espera. Porque la experiencia también empieza antes del primer bocado.',
         reverse: false,
     },
 ];
@@ -34,7 +34,7 @@ export default function Parrilla() {
                     La Parrilla
                 </span>
                 <h2 className="pl-title">
-                    Sabor al <em>Carbón</em>
+                    Sabor al <em><span className="accent-red">Carbón</span></em>
                 </h2>
                 <p className="pl-subtitle">
                     Todo comienza en el fuego. Ingredientes frescos transformados en puro sabor artesanal.
@@ -43,14 +43,14 @@ export default function Parrilla() {
 
             {/* Filas alternas imagen + texto */}
             <div className="pl-rows">
-                {items.map((item) => (
+                {items.map((item, idx) => (
                     <div
-                        key={item.label}
+                        key={idx}
                         className={`pl-row${item.reverse ? ' pl-row--reverse' : ''}`}
                     >
                         <div className="pl-row-image">
                             <div className="pl-img-frame">
-                                <img src={item.src} alt={item.title} className="pl-img" />
+                                <img src={item.src} alt="Parrilla Chuzgrill" className="pl-img" loading="lazy" />
                                 <div className="pl-img-overlay" />
                             </div>
                         </div>
@@ -66,8 +66,8 @@ export default function Parrilla() {
 
             {/* CTA centrado */}
             <div className="pl-footer-cta">
-                <a href="#contacto" className="pl-link">
-                    Ver el menú completo <ChevronRight size={16} />
+                <a href="https://wa.me/573188091851" className="pl-link" target="_blank" rel="noopener noreferrer">
+                    Pedir ahora <ChevronRight size={16} />
                 </a>
             </div>
         </section>
