@@ -1,8 +1,8 @@
-import { Menu } from 'lucide-react';
+
 
 export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNavigate }) {
     const links = [
-        { id: 'emotional-section', label: 'Inicio' },
+        { id: 'hero', label: 'Inicio' },
         { id: 'nuestra-historia', label: 'Historia' },
         { id: 'seccion-parrilla', label: 'La Parrilla' },
         { id: 'seccion-local', label: 'El Local' },
@@ -11,8 +11,10 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
 
     return (
         <nav className="navbar">
-            <div className="container navbar-content">
-                <div className="nav-logo">CHUZZGRILL</div>
+            <div className="nav-container navbar-content">
+                <div className="nav-logo">
+                    <img src="/logo.svg" alt="Chuzgrill Logo" style={{ height: '100%', width: 'auto' }} />
+                </div>
 
                 <div className="nav-links">
                     {links.map((link) => (
@@ -27,7 +29,7 @@ export default function Navbar({ activeSection, mobileOpen, onToggleMobile, onNa
                     ))}
                 </div>
 
-                <a href="#contacto" className="nav-cta">
+                <a href="#contacto" className="nav-cta" onClick={onNavigate}>
                     ¿Te Antojas?<div className="pulse-ring"></div>
                 </a>
 

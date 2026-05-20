@@ -1,16 +1,42 @@
-# React + Vite
+# ChuzGrill
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al repositorio de ChuzGrill. Este proyecto está construido con **React 19**, **Vite** y **TailwindCSS**.
 
-Currently, two official plugins are available:
+## 📦 Gestor de Paquetes: pnpm
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+El proyecto ha sido migrado de `npm` a `pnpm`. Esto garantiza instalaciones más rápidas, consistentes y un manejo optimizado del espacio en disco.
 
-## React Compiler
+### ¿Cómo instalar pnpm?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Si aún no tienes `pnpm` instalado en tu sistema, puedes instalarlo de forma global fácilmente:
 
-## Expanding the ESLint configuration
+```bash
+npm install -g pnpm
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Instalación y Ejecución
+
+Para levantar el entorno de desarrollo, sigue estos pasos:
+
+```bash
+# 1. Instalar todas las dependencias
+pnpm install
+
+# 2. Iniciar el servidor local
+pnpm run dev
+```
+
+### Comandos Disponibles
+
+- `pnpm run dev`: Levanta el servidor de desarrollo con Hot Module Replacement (HMR).
+- `pnpm run build`: Empaqueta y optimiza la aplicación para producción en la carpeta `dist/`.
+- `pnpm run lint`: Audita el código en busca de errores y verifica que se sigan las reglas de React Hooks.
+- `pnpm run start`: Alias para iniciar el entorno de desarrollo.
+- `pnpm run test`: Marcador de posición para futuras pruebas.
+
+## 🔒 Auditoría y Seguridad
+
+El proyecto ha sido endurecido para producción:
+- El `pnpm-lock.yaml` garantiza dependencias estrictas.
+- El archivo `.gitignore` protege la fuga de caché y archivos de entorno (`.env`).
+- Componentes refactorizados para respetar la pureza de ciclo de vida de React (`react-hooks/purity`).

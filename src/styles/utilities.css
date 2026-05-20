@@ -39,10 +39,6 @@
 }
 
 @media (max-width: 768px) {
-    .nav-cta {
-        display: none;
-    }
-
     .ember-container {
         display: none !important;
     }

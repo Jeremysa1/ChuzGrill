@@ -1,32 +1,74 @@
-import CarouselControls from '../components/CarouselControls.jsx';
-import SectionHeading from '../components/SectionHeading.jsx';
+import { Flame, ChevronRight } from 'lucide-react';
 
-const slides = [
-    '/Parrilla1.png',
-    '/Parrilla2.png',
-    '/Parrilla3.png',
+const items = [
+    {
+        label: '',
+        src: '/Parrilla1.webp',
+        title: <>Cortes <span className="accent-red">Selectos</span></>,
+        desc: 'Carnes de primera, seleccionadas con criterio, preparadas para el fuego y selladas en su punto.',
+        reverse: false,
+    },
+    {
+        label: '',
+        src: '/Parrillado.webp',
+        title: <>Tiempo y <span className="accent-red">Carbón</span></>,
+        desc: 'El fuego tiene su ritmo. Cocinamos con paciencia para lograr el punto exacto, sin atajos ni procesos acelerados.',
+        reverse: true,
+    },
+    {
+        label: '',
+        src: '/Parrilla4.webp',
+        title: <>Cerca del <span className="accent-red">fuego</span></>,
+        desc: 'Nos gusta preparar cada pedido frente a quien lo espera. Porque la experiencia también empieza antes del primer bocado.',
+        reverse: false,
+    },
 ];
 
 export default function Parrilla() {
     return (
-        <section id="seccion-parrilla" className="section-premium dark" style={{ position: 'relative' }}>
-            <div className="ember-container"></div>
-            <div className="container" style={{ position: 'relative', zIndex: 2, minWidth: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <h1 className='title-parrilla'>Sabor al Carbón</h1>
-                <p className='sub-parrilla'>Descubre nuestros platos preparados directamente en la parrilla, con el sabor auténtico que solo puede ofrecer el fuego.</p>
-                <div className="carousel-wrapper">
-                    <div className="carousel-container" id="carousel-parrilla">
-                        <div className="carousel-track">
-                            {slides.map((src, index) => (
-                                <div key={src} className={`carousel-slide ${index === 0 ? 'active' : index === 1 ? 'next' : ''}`} data-index={index} style={{ backgroundImage: `url('${src}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                                    <div className="slide-overlay"></div>
-                                    <div className="slide-number">0{index + 1} / 03</div>
-                                </div>
-                            ))}
+        <section id="seccion-parrilla" className="pl-section">
+            {/* Header centrado */}
+            <div className="pl-header">
+                <span className="pl-eyebrow">
+                    <Flame size={14} />
+                    La Parrilla
+                </span>
+                <h2 className="pl-title">
+                    Sabor al <em><span className="accent-red">Carbón</span></em>
+                </h2>
+                <p className="pl-subtitle">
+                    Todo comienza en el fuego. Ingredientes frescos transformados en puro sabor artesanal.
+                </p>
+            </div>
+
+            {/* Filas alternas imagen + texto */}
+            <div className="pl-rows">
+                {items.map((item, idx) => (
+                    <div
+                        key={idx}
+                        className={`pl-row${item.reverse ? ' pl-row--reverse' : ''}`}
+                    >
+                        <div className="pl-row-image">
+                            <div className="pl-img-frame">
+                                <img src={item.src} alt="Parrilla Chuzgrill" className="pl-img" loading="lazy" />
+                                <div className="pl-img-overlay" />
+                            </div>
+                        </div>
+                        <div className="pl-row-content">
+                            <span className="pl-row-label">{item.label}</span>
+                            <h3 className="pl-row-title">{item.title}</h3>
+                            <div className="pl-row-divider" />
+                            <p className="pl-row-desc">{item.desc}</p>
                         </div>
                     </div>
-                    <CarouselControls previousId="prev-parrilla" nextId="next-parrilla" progressId="progress-parrilla" />
-                </div>
+                ))}
+            </div>
+
+            {/* CTA centrado */}
+            <div className="pl-footer-cta">
+                <a href="https://wa.me/573188091851" className="pl-link" target="_blank" rel="noopener noreferrer">
+                    Pedir ahora <ChevronRight size={16} />
+                </a>
             </div>
         </section>
     );

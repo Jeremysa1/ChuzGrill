@@ -14,7 +14,7 @@ export default function Testimonials() {
                         <p className="testimonial-text">"La mejor hamburguesa artesanal que he probado en Medellín. El sabor del carbón es real y las salsas son de otro mundo."</p>
                         <div className="testimonial-author">
                             <div className="author-avatar">C</div>
-                            <div className="author-info"><span className="name">Carlos G.</span><span className="author-info">Cliente Frecuente</span></div>
+                            <div className="author-info"><span className="name">Carlos G.</span></div>
                         </div>
                     </div>
                     <div className="testimonial-card reveal reveal-up">

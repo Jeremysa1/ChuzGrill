@@ -1,4 +1,4 @@
-﻿/* Modularized CSS imports */
+/* Modularized CSS imports */
 @import url('./styles/base.css');
 @import url('./styles/navbar.css');
 @import url('./styles/hero.css');
@@ -6,7 +6,7 @@
 @import url('./styles/parrilla.css');
 @import url('./styles/local.css');
 @import url('./styles/history.css');
-@import url('./styles/carousel.css');
+@import url('./styles/sections.css');
 @import url('./styles/menu-cards.css');
 @import url('./styles/info-blocks.css');
 @import url('./styles/testimonials.css');

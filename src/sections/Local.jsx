@@ -1,87 +1,113 @@
-import { Clock, MapPin, Truck } from 'lucide-react';
-import CarouselControls from '../components/CarouselControls.jsx';
-import SectionHeading from '../components/SectionHeading.jsx';
+import { MapPin, Clock, Truck, ChevronRight } from 'lucide-react';
 
 const items = [
     {
-        image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=1000',
-        category: 'Destacado',
-        title: 'Hamburguesa Chuzz',
-        desc: 'Carne artesanal de 150g, queso fundido y salsa secreta.',
-        price: '$ 28.000',
+        label: '',
+        src: '/Fuego1.webp',
+        pos: 'center top',
+        title: <>Donde todo <span className="accent-red">comienza</span></>,
+        desc: 'Todo empieza aquí — el fuego, el carbón, el ritual. Un proceso esencial que le da un sabor unico a los ingredientes.',
+        reverse: false,
     },
     {
-        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1000',
-        category: 'Especialidad',
-        title: 'Chuzo de Cerdo',
-        desc: 'Lomo de cerdo seleccionado, asado lentamente al carbón.',
-        price: '$ 22.000',
+        label: '',
+        src: '/Hambur1.webp',
+        pos: 'center center',
+        title: <>Hechas para <span className="accent-red">ti</span></>,
+        desc: 'Cada hamburguesa es preparada al momento. Sin procesos industriales, sin atajos. Solo ingredientes frescos.',
+        reverse: true,
     },
     {
-        image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1000',
-        category: 'Familiar',
-        title: 'Combo Chuzzgrill',
-        desc: 'Lo mejor de nuestros cortes para compartir.',
-        price: '$ 85.000',
+        label: '',
+        src: '/Detalleham.webp',
+        pos: 'center center',
+        title: <>Disfruta de cada <span className="accent-red">detalle</span></>,
+        desc: 'Desde la selección de cada ingrediente hasta el último toque, todo es pensado para que disfrutes de un sabor autentico.',
+        reverse: false,
     },
+];
+
+const info = [
+    { Icon: MapPin, label: 'Ubicación',  value: 'Comuna 10, Medellín', link: 'https://maps.app.goo.gl/WmdPsyXC7wxM8aiCA' },
+    { Icon: Clock,  label: 'Horario',    value: 'Lunes a Sábado · 5 PM – 10 PM' },
+    { Icon: Truck,  label: 'Domicilios', value: '318 809 1851' },
 ];
 
 export default function Local() {
     return (
-        <section id="seccion-local" className="section-premium dark-local">
-            <div className="container" style={{ width: '1400px', margin: '0 auto' }}>
-                <SectionHeading title="Nuestro Local" subtitle="Un espacio pensado para tu comodidad" />
+        <section id="seccion-local" className="lc-section">
+            {/* Header centrado */}
+            <div className="lc-header">
+                <span className="lc-eyebrow">El Local</span>
+                <h2 className="lc-title">
+                    Un espacio hecho con <em><span className="accent-red">alma</span></em>
+                </h2>
+                <p className="lc-subtitle">
+                    Pasa, siéntate y prepárate para un sabor auténtico y sin atajos.
+                </p>
+            </div>
 
-                <div className="carousel-wrapper">
-                    <div className="carousel-container" id="carousel-menu">
-                        <div className="carousel-track">
-                            {items.map((item, index) => (
-                                <div key={item.title} className={`carousel-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
-                                    <div className="menu-card">
-                                        <div className="card-img-wrapper">
-                                            <img src={item.image} alt={item.title} />
-                                            <div className="card-category">{item.category}</div>
-                                            <div className="card-hover-overlay">
-                                                <div className="card-content">
-                                                    <h3 className="card-title">{item.title}</h3>
-                                                    <p className="card-desc">{item.desc}</p>
-                                                    <div className="card-footer">
-                                                        <span className="card-price">{item.price}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+            {/* Filas alternas imagen + texto */}
+            <div className="lc-rows">
+                {items.map((item, idx) => (
+                    <div
+                        key={idx}
+                        className={`lc-row${item.reverse ? ' lc-row--reverse' : ''}`}
+                    >
+                        <div className="lc-row-image">
+                            <div className="lc-img-frame">
+                                <img
+                                    src={item.src}
+                                    alt="Experiencia Chuzgrill"
+                                    className="lc-img"
+                                    style={{ objectPosition: item.pos }}
+                                    loading="lazy"
+                                />
+                                <div className="lc-img-overlay" />
+                            </div>
+                        </div>
+                        <div className="lc-row-content">
+                            <span className="lc-row-label">{item.label}</span>
+                            <h3 className="lc-row-title">{item.title}</h3>
+                            <div className="lc-row-divider" />
+                            <p className="lc-row-desc">{item.desc}</p>
                         </div>
                     </div>
-                    <CarouselControls previousId="prev-menu" nextId="next-menu" progressId="progress-menu" />
-                </div>
+                ))}
+            </div>
 
-                <div className="info-premium-grid">
-                    <div className="info-block">
-                        <div className="info-icon"><MapPin /></div>
-                        <div className="info-text">
-                            <h4>Ubicación</h4>
-                            <span className="main-data">Comuna 10, Medellín</span>
+            {/* Info strip */}
+            <div className="lc-info-strip">
+                {info.map(({ Icon, label, value, link }) => {
+                    const content = (
+                        <>
+                            <div className="lc-info-icon">
+                                <Icon size={20} />
+                            </div>
+                            <div className="lc-info-text">
+                                <span className="lc-info-label">{label}</span>
+                                <strong className="lc-info-value">{value}</strong>
+                            </div>
+                        </>
+                    );
+
+                    return link ? (
+                        <a key={label} href={link} target="_blank" rel="noopener noreferrer" className="lc-info-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            {content}
+                        </a>
+                    ) : (
+                        <div key={label} className="lc-info-card">
+                            {content}
                         </div>
-                    </div>
-                    <div className="info-block">
-                        <div className="info-icon"><Clock /></div>
-                        <div className="info-text">
-                            <h4>Horario</h4>
-                            <span className="main-data">Jue a Dom | 6 PM - 11 PM</span>
-                        </div>
-                    </div>
-                    <div className="info-block">
-                        <div className="info-icon"><Truck /></div>
-                        <div className="info-text">
-                            <h4>Domicilios</h4>
-                            <span className="main-data">Pide por WhatsApp</span>
-                        </div>
-                    </div>
-                </div>
+                    );
+                })}
+            </div>
+
+            {/* CTA centrado */}
+            <div className="lc-footer-cta">
+                <a href="https://maps.app.goo.gl/WmdPsyXC7wxM8aiCA" target="_blank" rel="noopener noreferrer" className="lc-link">
+                    Cómo llegar <ChevronRight size={16} />
+                </a>
             </div>
         </section>
     );
