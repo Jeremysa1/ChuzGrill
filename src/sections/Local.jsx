@@ -13,7 +13,7 @@ const items = [
         label: '',
         src: '/Hambur1.webp',
         pos: 'center center',
-        title: <>Hechas para <span className="accent-red">ti</span></>,
+        title: <>Hechas <span className="accent-red">para ti</span></>,
         desc: 'Cada hamburguesa es preparada al momento. Sin procesos industriales, sin atajos. Solo ingredientes frescos.',
         reverse: true,
     },
